@@ -51,16 +51,19 @@ class CreateAccount : AppCompatActivity() {
 
 
             if (email.isEmpty() || password.isEmpty() || confirmPassword.isEmpty()) {
+                binding.progressCircular.visibility = View.GONE
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
 
             if (password != confirmPassword) {
+                binding.progressCircular.visibility = View.GONE
                 Toast.makeText(this, "Passwords do not match", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             // Validate email format
             if (!android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches()) {
+                binding.progressCircular.visibility = View.GONE
                 Toast.makeText(this, "Invalid email address", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
