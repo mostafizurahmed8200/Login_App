@@ -1,9 +1,9 @@
-package com.example.loginapp
+package com.example.loginapp.activity
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.example.loginapp.databinding.ActivityMainBinding
+import com.example.loginapp.utils.Utils
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +14,8 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+
+        Utils.hideAppBar(this@MainActivity)
 
         // Example of a call to a native method
         binding.sampleText.text = stringFromJNI()
